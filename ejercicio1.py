@@ -72,7 +72,7 @@ def agenda():
             c = input("Dígame el contacto que desea buscar: ")
             for i in agenda:
                 if i.startswith(c):
-                    print("El número de teléfono de %s es %s" % (c, agenda[c]))
+                    print("El número de teléfono de %s es %s" % (i, agenda[i]))
         
         elif elegido == "3":
             c = input("Dígame el contacto que desea borrar: ")
@@ -88,4 +88,16 @@ def agenda():
         elif elegido == "5":
             break
 
-agenda()
+#agenda()
+
+
+def separar():
+    cadena = input("Dime una frase: ")
+    resultado = ""
+    for i in cadena:
+        if i.isupper():
+            resultado += " " + i
+        else:
+            resultado += i
+    return resultado
+print(separar())
