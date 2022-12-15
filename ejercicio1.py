@@ -43,9 +43,49 @@ def frutas():
             otrafruta=input("Quieres algo más? ")
         if otrafruta == "no":
             break        
-frutas()
+#frutas()
 
 
 
 def agenda():
-    
+    agenda = {}
+    while True:
+        print("1.Añadir")
+        print("2.Buscar")
+        print("3.Borrar")
+        print("4.Listar")
+        print("5.Salir")
+        elegido = input("Dime una opción: ")
+        if elegido == "1":
+            contacto = input("Dime el nombre del contacto que quiere añadir: ")
+            if contacto in agenda:
+                print("Ese contacto ya está en la agenda", agenda[contacto])
+                modificar = input("¿Quieres modificarlo? ")
+                if modificar == "si":
+                    numero = input("Dígame el número de telefono: ")
+                    agenda[contacto]=numero
+            else:
+                n = input("Dígame el número que quiere añadir: ")
+                agenda[contacto]=n
+
+        elif elegido == "2":
+            c = input("Dígame el contacto que desea buscar: ")
+            for i in agenda:
+                if i.startswith(c):
+                    print("El número de teléfono de %s es %s" % (c, agenda[c]))
+        
+        elif elegido == "3":
+            c = input("Dígame el contacto que desea borrar: ")
+            if c in agenda:
+                del agenda[c]
+            else:
+                print("Ese contacto no existe")
+
+        elif elegido == "4":
+            for i in agenda:
+                print(i, agenda[i])
+        
+        elif elegido == "5":
+            break
+
+agenda()
