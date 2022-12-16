@@ -100,4 +100,40 @@ def separar():
         else:
             resultado += i
     return resultado
-print(separar())
+#print(separar())
+
+def impar(numeros):
+    for i in numeros:
+        if i%2==1:
+            print(i)
+
+
+
+
+
+def caracteres(cadena):
+    lista=[]
+    print(len(cadena))
+    if len(cadena)%2==0:
+        for i in range(int(len(cadena)/2)):
+            print(i)
+            if i==0:
+                
+                lista.append(cadena[i]+""+ cadena[i+1])
+            else:
+                i=i*2
+                lista.append(cadena[i]+""+ cadena[i+1])
+    else:
+        for i in range(int((len(cadena)-1)/2)):
+            if i==0:
+                lista.append(cadena[i]+""+ cadena[i+1])
+            else:
+                i=i*2
+                lista.append(cadena[i]+""+ cadena[i+1])
+        lista.append(cadena[len(cadena)-1]+"_")
+    return lista
+
+print(caracteres('Carlo'))
+
+        
+        
